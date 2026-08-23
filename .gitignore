@@ -1,0 +1,83 @@
+# ==============================================================================
+# Backend Specific .gitignore
+# ==============================================================================
+
+# ── Secrets & Environment Variables (NEVER COMMIT) ───────────────────────────
+.env
+.env.*
+!.env.example
+*.env
+*.env.local
+*.env.production
+*.env.development
+
+# ── Database & SQLite Storage ─────────────────────────────────────────────────
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+ai_jobs.db
+
+# ── Generated Documents & Resumes ─────────────────────────────────────────────
+resumes/*
+!resumes/.gitkeep
+*.pdf
+*.docx
+test_link.pdf
+Cloud_Engineer_90_Day_Master_Tracker.xlsx
+
+# ── Python Bytecode & Cache ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ── Python Virtual Environments ───────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ── Distribution & Build Artifacts ────────────────────────────────────────────
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ── Testing, Coverage & Type Checking ─────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ── Logs & Temporary Files ────────────────────────────────────────────────────
+*.log
+scratch/
+.system_generated/
+
+# ── IDEs & OS Files ───────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
