@@ -24,9 +24,19 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+cors_origins = [
+    "https://hire-flow-frontend-dun.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:8000",
+]
+for o in settings.cors_origins_list:
+    clean = o.strip().rstrip("/")
+    if clean and clean not in cors_origins:
+        cors_origins.append(clean)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins_list if "*" not in settings.cors_origins_list else ["*"],
+    allow_origins=cors_origins,
     allow_origin_regex=r"^https:\/\/.*\.vercel\.app$|^http:\/\/localhost(:\d+)?$",
     allow_credentials=True,
     allow_methods=["*"],
